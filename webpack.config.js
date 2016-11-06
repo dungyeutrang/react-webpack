@@ -1,16 +1,16 @@
 const webpack = require('webpack');
 var config = {
-    entry: './main.js',
+    entry: './src/client/app/main.js',
 
     output: {
         path: './',
-        filename: 'index.js',
+        filename: 'build/[name].js',
     },
-
-    devServer: {
-        inline: true,
-        port: 8080
-    },
+    //
+    // devServer: {
+    //     inline: true,
+    //     port: 8080
+    // },
 
     module: {
         loaders: [
