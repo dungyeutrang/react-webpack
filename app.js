@@ -6,6 +6,7 @@
     var path = require('path');
     var bodyParser = require('body-parser');
     var multer  = require('multer');
+    var router = require('./src/server/route/index');
 
     app.engine('ejs',engine);
     app.use(express.static('public'));
@@ -14,9 +15,7 @@
     app.set('views', path.join(__dirname, '/src/client/view'));
 
     // respond with "hello world" when a GET request is made to the homepage
-    app.get('/', function (req, res) {
-        res.render('home/index');
-    })
+    app.use('/',router);
 
     app.listen(3000, function () {
         console.log('Server is starting at port 3000')
